@@ -8,11 +8,15 @@
 unless os.windows?
   describe user('root') do
     it { should exist }
-    skip 'This is an example test, replace with your own test.'
   end
 end
 
 describe port(80) do
   it { should_not be_listening }
-  skip 'This is an example test, replace with your own test.'
+end
+
+# fichero para definir las Pruebas a pasar por los test
+
+describe package ('tree') do
+  it { should be_installed }
 end
