@@ -12,11 +12,17 @@ unless os.windows?
 end
 
 describe port(80) do
-  it { should_not be_listening }
+  it { should be_listening }
 end
+
+describe command('curl localhost') do
+  its('stdout') { should match ('Hello, world') }
+end
+
+
 
 # fichero para definir las Pruebas a pasar por los test
 
-describe package ('tree') do
-  it { should be_installed }
-end
+#describe package ('tree') do
+# it { should be_installed }
+#end
